@@ -33,8 +33,6 @@ function DataTable(config) {
 		headings[i].setAttribute('value', config.columns[i].value);
 	}
 
-	headings[headings.length - 1].innerText = "Удаление";
-
 	let tBody = document.createElement('tbody');
 	table.appendChild(tBody);
 
@@ -74,7 +72,7 @@ async function processGet(config, headings, tBody) {
 				}
 				let td = document.createElement('td');
 				let button = document.createElement('button');
-				button.innerText = "Удалить";
+				button.innerText = "Delete";
 				button.classList.add("btn");
 				button.addEventListener("click", function () {
 					deleteUser(config['apiUrl'] + "/" + prop, config);
@@ -162,40 +160,40 @@ function simplifyDate(dateObj) {
 	let month = dateObj.getMonth();
 	switch (month) {
 		case 0:
-			month = "января";
+			month = "January";
 			break;
 		case 1:
-			month = "февраля";
+			month = "February";
 			break;
 		case 2:
-			month = "марта";
+			month = "March";
 			break;
 		case 3:
-			month = "апреля";
+			month = "April";
 			break;
 		case 4:
-			month = "мая";
+			month = "May";
 			break;
 		case 5:
-			month = "июня";
+			month = "June";
 			break;
 		case 6:
-			month = "июля";
+			month = "July";
 			break;
 		case 7:
-			month = "августа";
+			month = "August";
 			break;
 		case 8:
-			month = "сентября";
+			month = "September";
 			break;
 		case 9:
-			month = "октября";
+			month = "October";
 			break;
 		case 10:
-			month = "ноября";
+			month = "November";
 			break;
 		case 11:
-			month = "декабря";
+			month = "December";
 			break;
 	}
 	let correctDate = dateObj.getDate() + " " + month + " " + dateObj.getFullYear();
@@ -224,7 +222,7 @@ async function deleteUser(userId) {
  */
 function addNewUserButton() {
 	let addBtn = document.createElement('button');
-	addBtn.innerText = "Добавить пользователя";
+	addBtn.innerText = "Add new user";
 	addBtn.classList.add('btn__add');
 	return addBtn;
 }
@@ -281,10 +279,10 @@ async function postUser(obj, config) {
 const config1 = {
 	parent: '#usersTable01',
 	columns: [
-		{ title: 'Имя', value: 'name' },
-		{ title: 'Фамилия', value: 'surname' },
-		{ title: 'Дата рождения', value: 'birthday' },
-		{ title: 'Аватар', value: 'avatar' },
+		{ title: 'Name', value: 'name' },
+		{ title: 'Surname', value: 'surname' },
+		{ title: 'Birthday', value: 'birthday' },
+		{ title: 'Avatar', value: 'avatar' },
 	],
 	apiUrl: "https://mock-api.shpp.me/apanov/users"
 };
